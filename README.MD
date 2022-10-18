@@ -23,6 +23,7 @@ Alura Frame - Página para estudo de TypeScript.
  - **Diferenças do JS para TS**
  
 Uma das principais diferenças é que o TS é tipado, ou seja, você precisa definir o tipo de cada variável, função, etc. E isso é muito bom, pois o TS vai te ajudar a evitar erros de digitação, por exemplo, e também vai te ajudar a entender melhor o que cada coisa faz.
+<br/><br/>
 
 ## TÓPICO 2: Configuração do TS
 
@@ -47,6 +48,7 @@ Para configurar o TS, precisa-se criar um arquivo chamado tsconfig.json. Nele, s
  - **Modificador PRIVATE**
 
 O modificador PRIVATE é usado para definir que um atributo ou método só pode ser acessado dentro da classe que ele foi declarado. 
+<br/><br/>
 
 ## TÓPICO 3 - Tipagens
 
@@ -59,6 +61,7 @@ Para retirar o tipo ANY, pode-se usar o comando tsc "noImplicitAny": true no tsc
 - **Tipo HTMLElement**
 
 O tipo HTMLElement é um tipo que representa um elemento HTML. Muito útil para se trabalhar com elementos HTML.
+<br/><br/>
 
 ## TÓPICO 4 - Avançando em TS
 
@@ -69,6 +72,7 @@ Generics em TS são como templates, servem para definir um tipo genérico que po
 - **Modificador READONLY**
 
 O modificador READONLY é usado para definir que um atributo só pode ser lido, mas não pode ser alterado. Por exemplo: ReadOnlyArray<T> é um array que só pode ser lido, mas não pode ser alterado.
+<br/><br/>
 
 ## TÓPICO 5 - Simplificações no TS
 
