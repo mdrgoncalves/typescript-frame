@@ -92,3 +92,38 @@ Se a propriedade de uma classe estiver sendo utilizada apenas para leitura, pode
 - **Programação Defensiva com Datas**
 
 Pelo Date conter métodos que podem alterar o valor da data quando essa é passada como parâmetro, é recomendado criar uma cópia da data para fornecê-la como getter.
+
+> MÓDULO 2 - AVANÇANDO EM TYPESCRIPT
+
+## TÓPICO 1: Manipulação de DOM
+
+- **Templates Declarativos e Dinâmicos**
+
+Templates declarativos são templates que são declarados no HTML e são utilizados para renderizar elementos HTML. Templates dinâmicos são templates que são declarados no TS e são utilizados para renderizar elementos HTML.
+
+- **Formatação de Datas usando Intl**
+
+Para formatar datas, pode-se usar o Intl, que é um objeto que possui métodos para formatar datas, moedas, números, etc.
+<br/><br/>
+
+## TÓPICO 2: Heranças
+
+- **Aplicação do EXTENDS**
+
+O extends é usado para herdar atributos e métodos de uma classe. 
+
+- **Modificador PROTECTED**
+
+O modificador protected é usado para definir que um atributo ou método só pode ser acessado dentro da classe que ele foi declarado ou nas classes que herdam essa classe.
+
+- **Generics em Herança**
+
+É possível utilizar generics em herança. Por exemplo: class ClassePai<T> extends Pai<T>.
+O <T> define um tipo genérico, permitindo criar métodos que recebam esse mesmo tipo, aumentando o reaproveitamento de código entre pais e filhos.
+
+- **O ABSTRACT**
+
+O abstract é usado para definir que uma classe não pode ser instanciada, mas pode ser herdada. Uma classe abstrata pode ter métodos abstratos, que são métodos que não possuem implementação, mas que devem ser implementados nas classes filhas.
+<br/><br/>
+
+## TÓPICO 3: 
