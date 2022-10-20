@@ -174,3 +174,70 @@ O casting explícito é uma forma de forçar o TS a aceitar atribuições de nul
 <br/><br/>
 
 </details>
+
+<details>
+
+<summary><b><font size="+2">MÓDULO 3 - TÉCNICAS E BOAS PRÁTICAS</font></b></summary>
+
+## TÓPICO 1: Requisitos Não Funcionais e Decorators
+
+- **Performance Now**
+
+O performance.now() é um método que retorna o tempo em milissegundos desde que a página foi carregada. Esse método é útil para medir o tempo de execução de um trecho de código.
+
+- **Decorators**
+
+Os decorators são funções que podem ser aplicadas a classes, métodos, atributos e parâmetros. Eles são usados para adicionar funcionalidades a esses elementos. Para aplicar um decorator, basta colocar o símbolo @ antes da declaração do elemento. Por exemplo: @logarTempoDeExecução.
+
+- **Compilação do Decorator**
+
+Para ativar a compilação dos decorators no código, é necessário adicionar o parâmetro "experimentalDecorators": true no tsconfig.json.
+
+- **Parâmetros do Decorator**
+
+    function decorator() {
+
+        return function(
+            target: any, 
+            /*
+                Se colocar o decorator em um método estático, o target é a função construtora
+                Se colocar o decorator em um método de instância, o target é o prototype da função construtora
+            */
+            propertyKey: string,
+            /*
+                Se colocar o decorator em um atributo, o propertyKey é o nome do atributo
+                Se colocar o decorator em um parâmetro, o propertyKey é o nome do método
+            */
+            descriptor: PropertyDescriptor
+            /*
+                Se colocar o decorator em um método, o descriptor dá acesso ao método
+            */
+        )
+    }
+<br/><br/>
+
+## TÓPICO 2: Decorators de Métodos
+
+- **Template do Decorator**
+
+    export function inspect() {
+
+        return function(
+            target: any,
+            key: string,
+            descriptor: PropertyDescriptor
+        ) {
+            const metodoOriginal = descriptor.value;
+
+            descriptor.value = function(...args: any[]) {
+
+                const retorno = metodoOriginal.apply(this, args);
+                return retorno;
+            };
+
+            return descriptor;
+        }
+    }
+<br/><br/>
+
+</details>
