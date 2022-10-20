@@ -1,4 +1,3 @@
-
 <h1 align="center">
     Alura Frame
 </h1>
@@ -16,7 +15,9 @@ Alura Frame - Página para estudo de TypeScript.
 
 # 🛠 Conteúdo Estudado
 
-> MÓDULO 1 - EVOLUINDO O JAVASCRIPT
+<details>
+
+<summary><b><font size="+2">MÓDULO 1 - EVOLUINDO O JAVASCRIPT</font></b></summary>
 
 ## TÓPICO 1: Básico do TS
 
@@ -92,8 +93,13 @@ Se a propriedade de uma classe estiver sendo utilizada apenas para leitura, pode
 - **Programação Defensiva com Datas**
 
 Pelo Date conter métodos que podem alterar o valor da data quando essa é passada como parâmetro, é recomendado criar uma cópia da data para fornecê-la como getter.
+<br/><br/>
 
-> MÓDULO 2 - AVANÇANDO EM TYPESCRIPT
+</details>
+
+<details>
+
+<summary><b><font size="+2">MÓDULO 2 - AVANÇANDO EM TYPESCRIPT</font></b></summary>
 
 ## TÓPICO 1: Manipulação de DOM
 
@@ -126,4 +132,45 @@ O <T> define um tipo genérico, permitindo criar métodos que recebam esse mesmo
 O abstract é usado para definir que uma classe não pode ser instanciada, mas pode ser herdada. Uma classe abstrata pode ter métodos abstratos, que são métodos que não possuem implementação, mas que devem ser implementados nas classes filhas.
 <br/><br/>
 
-## TÓPICO 3: 
+## TÓPICO 3: Enumerations
+
+- **ENUM**
+
+O enum é usado para definir um conjunto de constantes. Por exemplo: enum DiasDaSemana {Segunda, Terça, Quarta, Quinta, Sexta, Sábado, Domingo}. O enum é um tipo de dado, então pode ser utilizado em qualquer lugar que se possa utilizar um tipo de dado.
+
+- **ENUM COM VALORES**
+
+É possível definir valores para cada constante do enum. Isso garante a segurança da ordem do enum, pois se uma constante for adicionada no meio do enum, as outras constantes não serão alteradas. 
+<br/><br/>
+
+## TÓPICO 4 - Static e Opcionais
+
+- **Modificador STATIC**
+
+O static é usado para definir que um atributo ou método pertence à classe, e não à instância da classe, sendo assim, não é necessário instanciar a classe para acessar o atributo ou método.
+
+- **Proteção do innerHTML**
+
+Para proteger o innerHTML, pode-se utilizar um escape para evitar que seja inserido a tag script no HTML. Como é o caso utilizando o REGEX: innerHTML = texto.replace(/<script>[\s\S]*?<\/script>/, '');
+
+- **Opcionais**
+
+É possível definir que um atributo ou parâmetro é opcional, utilizando o símbolo de interrogação (?) após o nome do atributo ou parâmetro. Isso permite que o atributo ou parâmetro não seja obrigatório, podendo ser passado ou não.
+<br/><br/>
+
+## TÓPICO 5 - Ambientes Rígidos
+
+- **Remoção de Comentários na Compilação**
+
+Para remover comentários na compilação, pode-se utilizar o parâmetro --removeComments no tsconfig.json.
+
+- **StrictNullChecks**
+
+O strictNullChecks é um parâmetro do tsconfig.json que permite que o TS não aceite atribuições de null ou undefined para variáveis que não são do tipo any ou que não possuem o símbolo de interrogação (?) após o nome do atributo ou parâmetro.
+
+- **Casting Explícito**
+
+O casting explícito é uma forma de forçar o TS a aceitar atribuições de null ou undefined para variáveis que não são do tipo any ou que não possuem o símbolo de interrogação (?) após o nome do atributo ou parâmetro. Para isso, pode-se inferir explicitamente o tipo da varíavel, utilizando "... as Tipo" após a declaração da variável ou <Tipo> antes da declaração da variável.
+<br/><br/>
+
+</details>
