@@ -195,6 +195,7 @@ Para ativar a compilação dos decorators no código, é necessário adicionar o
 
 - **Parâmetros do Decorator**
 
+```typescript
     function decorator() {
 
         return function(
@@ -214,13 +215,15 @@ Para ativar a compilação dos decorators no código, é necessário adicionar o
             */
         )
     }
+```
 <br/><br/>
 
 ## TÓPICO 2: Decorators de Métodos
 
 - **Template do Decorator**
 
-    export function inspect() {
+```typescript
+    export function decorator() {
 
         return function(
             target: any,
@@ -238,6 +241,77 @@ Para ativar a compilação dos decorators no código, é necessário adicionar o
             return descriptor;
         }
     }
+```
+
+- **Simplificando um Decorator**
+
+Se um decorator não tiver nenhum parâmetro, não é necessário chamar um wrapper. Por exemplo:
+
+```typescript
+    return decorator(
+        target: any,
+        key: string,
+        descriptor: PropertyDescriptor
+    ) {
+        const metodoOriginal = descriptor.value;
+
+        descriptor.value = function(...args: any[]) {
+
+            const retorno = metodoOriginal.apply(this, args);
+            return retorno;
+        };
+
+        return descriptor;
+    }
+```
 <br/><br/>
+
+## TÓPICO 3: Decorators de Propriedades
+
+- **Getters Dinâmicos**
+
+Para que seja possível o decorator acessar o atributo através de alguma instância da classe, é necessário criar um getter dinâmico para o atributo. Para isso, basta criar um getter para o atributo, que retorna o valor do atributo da instância da classe.
+
+- **Redefinir Getter**
+
+Para redefinir o getter, é necessário utilizar o Object.defineProperty. Este sobrescreverá o getter original, criando uma nova referência no prototype, permitindo que o decorator acesse o atributo através de alguma instância da classe.
+
+- **Cache Decorator Copy**
+
+Para evitar que o decorator seja aplicado várias vezes ao mesmo atributo, é necessário criar um cache para o decorator. Para isso, cria-se uma verificação no decorator para verificar se o atributo já foi decorado. Caso não tenha sido, o decorator é aplicado ao atributo. Caso já tenha sido, o decorator não é aplicado novamente.
+<br/><br/>
+
+## TÓPICO 4: API Externa e Interface
+
+- **Interfaces**
+
+As interfaces são formas de definir um contrato para uma classe. Elas são úteis para definir o que uma classe deve ter, mas não como ela deve ter. Para criar uma interface, basta utilizar a palavra interface seguida do nome da interface. 
+
+- **Implementando uma Interface**
+
+Para implementar uma interface, basta utilizar a palavra implements seguida do nome da interface. 
+
+- **Services**
+
+Os services são classes que contém métodos que acessam uma API externa. Eles são úteis para isolar a lógica de acesso a uma API externa, permitindo que a lógica de negócio da aplicação não seja afetada caso a API externa mude.
+<br/><br/>
+
+## TÓPICO 5: Evoluindo Interfaces
+
+- **Polimorfismo**
+
+O polimorfismo é um conceito que permite que uma classe tenha métodos com o mesmo nome, mas que façam coisas diferentes. Para isso, pode-se utilizar interfaces. 
+
+- **Interfaces com Generics**
+
+As interfaces podem ser parametrizadas, permitindo que sejam utilizadas com diferentes tipos de dados. Para isso, basta utilizar o símbolo <T> antes do nome da interface.
+
+- **Estendendo Interfaces**
+
+Para estender uma interface, basta utilizar a palavra extends seguida do nome da interface. As interfaces podem ser estendidas um número ilimitados de vezes, ao contrário das classes.
+
+- **SourceMap**
+
+O sourceMap é um arquivo que mapeia o código transpilado para o código original. Ele é útil para debugar o código original, mesmo que o código transpilado esteja sendo executado. Para gerar o sourceMap, basta adicionar o parâmetro "sourceMap": true no tsconfig.json. Para o debug ocorrer de forma correta, tanto o código compilado quanto a ser compilado devem estar na mesma estrutura de pastas.
 
 </details>
